@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" rulesetName="Refund_Processing" usingRuleflow="true" ruleflowName="Refund Processing Ruleflow">
+  <name>Refund Processing Operation</name>
+  <uuid>71dd0f56-7b63-4ddf-9af7-398028208c28</uuid>
+  <referencedVariables variableName="Final_Refund_Decision" variableSetName="Final_Refund_Decision" direction="OUT">
+    <variableSet href="../rules/Refund%20Processing%20Variables.var#2018cf63-694f-42c5-a4a1-038ae1056ae2"/>
+  </referencedVariables>
+  <referencedVariables variableName="refund_request" variableSetName="refund_request">
+    <variableSet href="../rules/Refund%20Processing%20Variables.var#2018cf63-694f-42c5-a4a1-038ae1056ae2"/>
+  </referencedVariables>
+  <referencedVariables variableName="order" variableSetName="order">
+    <variableSet href="../rules/Refund%20Processing%20Variables.var#2018cf63-694f-42c5-a4a1-038ae1056ae2"/>
+  </referencedVariables>
+  <ruleflow href="../rules/odm/Refund%20Processing%20Ruleflow.rfl#5a78f943-20b4-4a89-8745-4e97a14f0d06"/>
+  <targetRuleProject href="../../Refund%20Processing#5673dd7b-1587-450f-8a73-b6af20507f9a"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

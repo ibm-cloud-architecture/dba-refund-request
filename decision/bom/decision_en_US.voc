@@ -1,0 +1,7 @@
+uuid = a335b993-6f6a-4d5d-bcbe-1f81631fa7f9
+
+# myModel.odm.RefundProcessingDecision
+myModel.odm.RefundProcessingDecision#concept.dmn.isDecision = true
+myModel.odm.RefundProcessingDecision#concept.label =  
+myModel.odm.RefundProcessingDecision#concept.verbalization.term =  
+myModel.odm.RefundProcessingDecision.run(myModel.odm.RefundRequest,myModel.odm.Order)#phrase.navigation = {refund processing decision} where {0, refund request} {1, order} 
