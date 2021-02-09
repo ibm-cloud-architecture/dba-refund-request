@@ -9,6 +9,8 @@
     <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="model" url="platform:/Refund_Processing/bom/model.bom"/>
     <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="model" url="platform:/Refund_Processing/bom/model.bom"/>
     <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="model" url="platform:/Refund_Processing/bom/model.bom"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="decision" url="platform:/Refund_Processing/bom/decision.bom"/>
+    <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="model" url="platform:/Refund_Processing/bom/model.bom"/>
     <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="model" url="platform:/Refund_Processing/bom/model.bom"/>
     <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="model" url="platform:/Refund_Processing/bom/model.bom"/>
     <entries xsi:type="ilog.rules.studio.model.bom:BOMEntry" name="model" url="platform:/Refund_Processing/bom/model.bom"/>

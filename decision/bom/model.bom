@@ -1,5 +1,5 @@
 
-property Creator "Decision Composer:8.10.1.0"
+property Creator "Decision Composer:8.10.5.0"
 property loadGetterSetterAsProperties "true"
 property uuid "608b1f17-b356-47b4-a34c-49260c080eff"
 package com.ibm.rules.dmn.runtime;
