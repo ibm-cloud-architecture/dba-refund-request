@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<com.ibm.rules.studio.model.validation:Metric xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.validation="http://com.ibm.rules.studio/model/validation.ecore">
-  <name>Refunds Count</name>
-  <uuid>b318bc45-465e-44ce-9e5a-81778c943f89</uuid>
-  <operationId>71dd0f56-7b63-4ddf-9af7-398028208c28</operationId>
-  <documentation><![CDATA[]]></documentation>
-  <metricType>Numeric</metricType>
-  <mapping>the number of elements in all Refund Decision values </mapping>
-</com.ibm.rules.studio.model.validation:Metric>
