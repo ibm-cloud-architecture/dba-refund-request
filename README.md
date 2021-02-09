@@ -10,7 +10,7 @@
 **Use Case Overview:** Imagine that a customer purchases your product, but is unfortunately unsatisfied and requests a refund. Today, your refund process has several manual steps. Managing high volumes of refunds that require manual investigation leads to slow average completion times, inconsistent status updates to customers, and higher costs for any errors made.
 This use case demonstrates the use of automation in the form of straight-through-processing to save time, money, and customer frustration.
 
-**Trial Details:** If you have a Digital Business Automation on Cloud trial, your environment is predeployed, continue to the Guided Tour section within the [Refund request use case](https://ibm-cloud-architecture.github.io/refarch-dba/use-cases/refund-req/)].  Don't have a trial yet? <a href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-45706" target="_blank">Sign up</a> to get started.
+**Trial Details:** If you have a Digital Business Automation on Cloud trial, your environment is predeployed, continue to the Guided Tour section within the [Refund request use case](https://ibm-cloud-architecture.github.io/refarch-dba/use-cases/refund-req/).  Don't have a trial yet? <a href="https://www.ibm.com/account/reg/us-en/signup?formid=urx-45706" target="_blank">Sign up</a> to get started.
 
 **Technical Details:** To deploy Refund Request on your own environment and learn more about the technical architecture, read on!
 
@@ -25,7 +25,7 @@ The following diagram illustrates the products involved and the solution compone
 We assume the following products are installed, up and running:
 
 * IBM Cloud Pak® for Automation version 20.0.3
-    * Business Automation Workflow (BAW) on VMs
+    * Business Automation Workflow (BAW) on VMs (may work on OpenShift, has not been tested)
     * Operational Decision Manager (ODM) on OpenShift
     * Business Automation Insights (BAI) on OpenShift (Optional, can be run without)
 
