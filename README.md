@@ -88,6 +88,25 @@ We assume the following products are installed, up and running:
     1. Edit the details of the application and add appropriate teams to the Permissions table
     1. Edit the desktop of your choice and on the Layout tab, add the application
 
+### Differences between application configurations
+
+The Refund Request application is provided in the following pre-configured forms:
+
+* **Public Trial:** when installed and used as part of the IBM Cloud Pak for Business Automation as a Service public trial, the application is configured as follows:
+    * the application utilizes a single page with no additional windows/tabs
+    * the page includes a welcome step followed by steps 1 through 5
+    * each step includes getting started instructions, step completion check boxes, and a summary of what you learned
+* **Overview:** when installed as part of a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Production -> Run -> Business Automation Apps desktop as follows:
+    * the application utilizes a single page with no additional windows/tabs
+    * the page includes only steps 1 through 5
+    * the steps do **not** have getting started instructions, step completion check boxes, or a summary of what you learned (but this can be activated as desired, see the Hidden Control Panel section below)
+* **Deep Dive:** when loaded in a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Development -> Build -> Business Automation Studio for preview as follows (it may also be manually installed in your own environment, such as ROKS, using the steps above):
+    * the application utilizes a launchpad which provide a simple method to open multiple windows/tabs to the various interfaces for each persona
+    * the page does **not** include any steps, getting started instructions, step completion check boxes, or a summary of what you learned (but this can be activated as desired, see the Hidden Control Panel section below)
+
+### Hidden Control Panel
+
+The Refund Request application includes a hidden Control Panel that allows configuration of the application such as between the above different configurations.  Show the hidden Control Panel by scrolling to the bottom of any page and clicking the background just above the grey footer bar.  The Control Panel may be hidden again by clicking in the same location.
 
 
 ## Contributors
