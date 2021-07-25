@@ -96,13 +96,17 @@ The Refund Request application is provided in the following pre-configured forms
     * the application utilizes a single page with no additional windows/tabs
     * the page includes a welcome step followed by steps 1 through 5
     * each step includes getting started instructions, step completion check boxes, and a summary of what you learned
-* **Overview:** when installed as part of a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Production -> Run -> Business Automation Apps desktop as follows:
-    * the application utilizes a single page with no additional windows/tabs
-    * the page includes only steps 1 through 5
+    * implementation: demoLevel=false, deepDive=false, showDecisionLabels=true, showControlPanel=false, showBPCDashboards=true
+* **Live Walkthrough:** when installed as part of a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Production -> Run -> Business Automation Apps desktop as follows:
+    * the application utilizes a single page with no additional browser windows/tabs
+    * the page includes multiple tabs for the storyboard, discovery map, diagram and steps 1 through 5 to run the demo
     * the steps do **not** have getting started instructions, step completion check boxes, or a summary of what you learned (but this can be activated as desired, see the Hidden Control Panel section below)
-* **Deep Dive:** when loaded in a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Development -> Build -> Business Automation Studio for preview as follows (it may also be manually installed in your own environment, such as ROKS, using the steps above):
-    * the application utilizes a launchpad which provide a simple method to open multiple windows/tabs to the various interfaces for each persona
+    * implementation: demoLevel=true, deepDive=false, showDecisionLabels=true, showControlPanel=false, showBPCDashboards=false
+* **Technical Deep Dive:** when loaded in a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Development -> Build -> Business Automation Studio for preview as follows (it may also be manually installed in your own environment, such as ROKS, using the steps above):
+    * the page includes multiple tabs for the storyboard, discovery map and diagram
+    * the application utilizes a launchpad which provides a simple method to open multiple browser windows/tabs to the various interfaces for each persona
     * the page does **not** include any steps, getting started instructions, step completion check boxes, or a summary of what you learned (but this can be activated as desired, see the Hidden Control Panel section below)
+    * implementation: demoLevel=true, deepDive=true, showDecisionLabels=false, showControlPanel=false, showBPCDashboards=false
 
 ### Hidden Control Panel
 
