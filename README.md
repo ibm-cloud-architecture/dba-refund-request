@@ -77,7 +77,7 @@ We assume the following products are installed, up and running:
         1. Create an external automation service named Refund_Request_Application_Services, connect it to the appropriate BAW server, select the Refund Request process and Invoke Refund Processing ODM service flow and publish
         1. Export the external automation service as a ZIP from the Business automations -> Extenal section
     1. If you are deploying Refund Request on your own OpenShift environment
-        1. Publish the workflow project's snapshot in Business Automation Studio to make the automation services are available to applications
+        1. Publish the workflow project's snapshot in Business Automation Studio to make the automation services available to applications
     1. Import the Refund Request application in Business applications using RefundRequest (RR) – App - YYYY.MM.DD_XX.json
     1. Create a new snapshot if needed and export the application as a ZIP
 1. Deploy Business Automation Navigator artifacts
