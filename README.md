@@ -1,4 +1,4 @@
-:warning: **V21.0.2 version (master) is UNDER CONSTRUCTION and not all assets are up to date or tested, please use branch 20.0.3 for the last stable version!**
+:warning: **V21.0.2 version (master) is UNDER CONSTRUCTION and not all assets fully tested, please use branch 20.0.3 for the last stable version!**
 
 ***
 
@@ -37,7 +37,7 @@ We assume the following products are installed, up and running:
     * Business Automation Navigator on OpenShift
     * Business Automation Workflow (BAW) on VMs or OpenShift
     * Operational Decision Manager (ODM) on OpenShift
-    * Business Automation Insights (BAI) on OpenShift (Optional, can be run without)
+    * Business Automation Insights (BAI) on OpenShift
 
 ### Deploy the artifacts
 
@@ -90,7 +90,7 @@ We assume the following products are installed, up and running:
 
 ### Differences between application configurations
 
-The Refund Request application is provided in the following pre-configured forms:
+The Refund Request application can be configured in the following forms:
 
 * **Public Trial:** when installed and used as part of the IBM Cloud Pak for Business Automation as a Service public trial, the application is configured as follows:
     * the application utilizes a single page with no additional windows/tabs
