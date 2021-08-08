@@ -7,7 +7,7 @@
 
 ***
 
-**Use Case Area:** Straight-through processing
+**Use Case:** Straight-through processing
 
 **Use Case Overview:** Imagine that a customer purchases your product, but is unfortunately unsatisfied and requests a refund. Today, your refund process has several manual steps. Managing high volumes of refunds that require manual investigation leads to slow average completion times, inconsistent status updates to customers, and higher costs for any errors made.
 This use case demonstrates the use of automation in the form of straight-through-processing to save time, money, and customer frustration.
@@ -88,29 +88,29 @@ We assume the following products are installed, up and running:
     1. Edit the details of the application and add appropriate teams to the Permissions table
     1. Edit the desktop of your choice and on the Layout tab, add the application
 
-### Differences between application configurations
+### Refund Request application modes
 
-The Refund Request application can be configured in the following forms:
+The Refund Request application supports the following modes and is configured using the hidden control panel as mentioned in the next section:
 
-* **Public Trial:** when installed and used as part of the IBM Cloud Pak for Business Automation as a Service public trial, the application is configured as follows:
+* **Guided:** recommended for those first learning Cloud Pak for Business Automation
     * the application utilizes a single page with no additional windows/tabs
     * the page includes a welcome step followed by steps 1 through 5
     * each step includes getting started instructions, step completion check boxes, and a summary of what you learned
-    * implementation: demoLevel=false, deepDive=false, showDecisionLabels=true, showControlPanel=false, showBPCDashboards=true
-* **Live Walkthrough:** when installed as part of a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Production -> Run -> Business Automation Apps desktop as follows:
+    * implementation: demoLevel=false, deepDive=false, showDecisionLabels=true, showControlPanel=false, showBPCDashboards=false (showBPCDashboards=true is only supported at this time within public trial tenants)
+* **Live Walkthrough:** recommended for those lightly experienced with Cloud Pak for Business Automation and wishing to show it to someone else
     * the application utilizes a single page with no additional browser windows/tabs
     * the page includes multiple tabs for the storyboard, discovery map, diagram and steps 1 through 5 to run the demo
     * the steps do **not** have getting started instructions, step completion check boxes, or a summary of what you learned (but this can be activated as desired, see the Hidden Control Panel section below)
     * implementation: demoLevel=true, deepDive=false, showDecisionLabels=true, showControlPanel=false, showBPCDashboards=false
-* **Technical Deep Dive:** when loaded in a IBM Cloud Pak for Business Automation as a Service demo tenant (mostly IBMers), the application is available in the Development -> Build -> Business Automation Studio for preview as follows (it may also be manually installed in your own environment, such as ROKS, using the steps above):
+* **Technical Deep Dive:** recommended for those deeply experienced with Cloud Pak for Business Automation and wishing to show the various tools and interfaces to someone else
     * the page includes multiple tabs for the storyboard, discovery map and diagram
     * the application utilizes a launchpad which provides a simple method to open multiple browser windows/tabs to the various interfaces for each persona
     * the page does **not** include any steps, getting started instructions, step completion check boxes, or a summary of what you learned (but this can be activated as desired, see the Hidden Control Panel section below)
-    * implementation: demoLevel=true, deepDive=true, showDecisionLabels=false, showControlPanel=false, showBPCDashboards=false
+    * implementation: demoLevel=true, deepDive=true, showDecisionLabels=false, showControlPanel=true, showBPCDashboards=false
 
 ### Hidden Control Panel
 
-The Refund Request application includes a hidden Control Panel that allows configuration of the application such as between the above different configurations.  Show the hidden Control Panel by scrolling to the bottom of any page and clicking the background just above the grey footer bar.  The Control Panel may be hidden again by clicking in the same location.
+The Refund Request application includes a hidden Control Panel that allows configuration of the application mode as described above.  Show the hidden Control Panel by scrolling to the bottom of any page and clicking the background just above the grey footer bar.  The Control Panel may be hidden again by clicking in the same location.
 
 
 ## Contributors
