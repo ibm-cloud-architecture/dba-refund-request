@@ -1,7 +1,3 @@
-:warning: **V21.0.2 version (master) is UNDER CONSTRUCTION and not all assets fully tested, please use branch 20.0.3 for the last stable version!**
-
-***
-
 ## Refund Request use case
 **an IBM Cloud Pak for Business Automation use case demo**
 
@@ -36,7 +32,7 @@ We assume the following products are installed, up and running:
     * Business Automation Applications (including Studio and App Engine) on OpenShift
     * Business Automation Navigator on OpenShift
     * Business Automation Workflow (BAW) on VMs or OpenShift
-    * Operational Decision Manager (ODM) on OpenShift
+    * Operational Decision Manager (ODM) on OpenShift (as of the date committing this documentation, the ODM demo pattern is not supported)
     * Business Automation Insights (BAI) on OpenShift
 
 ### Deploy the artifacts
