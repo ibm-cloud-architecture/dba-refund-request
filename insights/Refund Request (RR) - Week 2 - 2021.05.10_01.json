@@ -1,0 +1,181 @@
+{
+  "name" : "Refund Request (RR) - Week 2",
+  "description" : "Focus Corp Refund Dashboard - Week 2",
+  "owner" : "jgoodhue@us.ibm.com",
+  "displayableOwner" : "Jeff Goodhue Goodhue",
+  "isPublic" : false,
+  "visualizations" : [ {
+    "id" : "771fcf81-4645-4538-a3cd-45f3e0e8e679",
+    "name" : "Number of Refund Requests per Week",
+    "description" : "",
+    "config" : {
+      "type" : "MetricConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "6b1203bc-682a-415a-851c-72c331832cb6",
+        "name" : "Generate Week 2 BAI Data RR v2",
+        "fields" : [ "processId" ],
+        "fieldValues" : [ "6b1203bc-682a-415a-851c-72c331832cb6" ],
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "field" : "",
+        "aggregation" : "Count"
+      },
+      "settings" : {
+        "type" : "SingleSettingsTextDto",
+        "unit" : "requests",
+        "_version" : 1
+      }
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 0.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 0.0,
+      "y" : 0.0,
+      "w" : 3.0,
+      "h" : 2.0
+    } ]
+  }, {
+    "id" : "73720611-17e5-4ec0-b414-375b6758b06f",
+    "name" : "Average Manual Investigation Processing Time",
+    "description" : "",
+    "config" : {
+      "type" : "KpiConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "6b1203bc-682a-415a-851c-72c331832cb6",
+        "name" : "Generate Week 2 BAI Data RR v2",
+        "fields" : [ "processId" ],
+        "fieldValues" : [ "6b1203bc-682a-415a-851c-72c331832cb6" ],
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "field" : "data.TG2.pTime.integer",
+        "aggregation" : "Average"
+      },
+      "settings" : {
+        "type" : "SingleSettingsRadialGaugeDto",
+        "min" : 0.0,
+        "max" : 200.0,
+        "unit" : "minutes",
+        "_version" : 1
+      },
+      "thresholds" : [ {
+        "name" : "High",
+        "value" : 100.0,
+        "ranges" : [ {
+          "name" : "Good",
+          "start" : "min",
+          "end" : "100",
+          "color" : "#005d5d"
+        }, {
+          "name" : "High",
+          "start" : "100",
+          "end" : "max",
+          "color" : "#9f1853"
+        } ]
+      } ]
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 2.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 3.0,
+      "y" : 0.0,
+      "w" : 3.0,
+      "h" : 2.0
+    } ]
+  }, {
+    "id" : "8c486142-d95f-4c5e-97eb-d5b1dabec3ae",
+    "name" : "Refund Request by Type",
+    "description" : "",
+    "config" : {
+      "type" : "MetricConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "6b1203bc-682a-415a-851c-72c331832cb6",
+        "name" : "Generate Week 2 BAI Data RR v2",
+        "fields" : [ "processId" ],
+        "fieldValues" : [ "6b1203bc-682a-415a-851c-72c331832cb6" ],
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "field" : "",
+        "aggregation" : "Count",
+        "groupBy" : [ "data.TG2.status.string.keyword" ]
+      },
+      "settings" : {
+        "type" : "SingleSettingsPieDto",
+        "unit" : "requests",
+        "_version" : 1
+      }
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 4.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 0.0,
+      "y" : 2.0,
+      "w" : 3.0,
+      "h" : 3.0
+    } ]
+  }, {
+    "id" : "59c858e2-4f96-4a32-b17b-0376b92fe54f",
+    "name" : "Average Manual Processing Time per Day",
+    "description" : "",
+    "config" : {
+      "type" : "MetricConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "6b1203bc-682a-415a-851c-72c331832cb6",
+        "name" : "Generate Week 2 BAI Data RR v2",
+        "fields" : [ "processId" ],
+        "fieldValues" : [ "6b1203bc-682a-415a-851c-72c331832cb6" ],
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "field" : "data.TG2.pTime.integer",
+        "aggregation" : "Average",
+        "groupBy" : [ "data.TG2.dayOfWeekS.string.keyword" ]
+      },
+      "settings" : {
+        "type" : "SingleSettingsBarDto",
+        "unit" : "day of week (minutes)",
+        "_version" : 1
+      }
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 6.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 3.0,
+      "y" : 2.0,
+      "w" : 3.0,
+      "h" : 3.0
+    } ]
+  } ],
+  "timeWindow" : {
+    "type" : "NoTimeWindowDto"
+  },
+  "creation" : "2021-05-07T13:03:18.944Z",
+  "lastUpdate" : "2021-05-11T07:12:33.776Z",
+  "goalsLayout" : [ ]
+}

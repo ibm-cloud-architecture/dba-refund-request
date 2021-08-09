@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
-  <name>Refund Processing Variables</name>
-  <uuid>2018cf63-694f-42c5-a4a1-038ae1056ae2</uuid>
-  <variables name="Final_Refund_Decision" type="myModel.RefundDecision" verbalization="Final Refund Decision"/>
-  <variables name="refund_request" type="myModel.odm.RefundRequest" verbalization="refund request"/>
-  <variables name="order" type="myModel.odm.Order" verbalization="order"/>
-</ilog.rules.studio.model.base:VariableSet>

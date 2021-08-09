@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.brl:BRLRuleTemplate xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
-  <name>%emptyActionRule_key</name>
-  <uuid>e80fefd8-e219-46ab-9e60-c1af52f06fc1</uuid>
-  <rule xsi:type="ilog.rules.studio.model.brl:ActionRule">
-    <active>false</active>
-  </rule>
-</ilog.rules.studio.model.brl:BRLRuleTemplate>
