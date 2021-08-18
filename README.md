@@ -44,7 +44,7 @@ We assume the following products are installed, up and running:
     1. If deploying Refund Request on your own OpenShift environment:
         * Make sure you have a login to all required components above
     1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS):
-        * install the **Client-side requirements** from here: [V21.0.x](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/21.0.x?topic=deployments-preparing-demo-deployment)
+        * Install the **Client-side requirements** from here: [V21.0.x](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/21.0.x?topic=deployments-preparing-demo-deployment)
         * Follow the steps on [Setup ROKS Ingress](setupROKSIngress.md) to ensure ODM can be invoked from workflows
 1. Deploy ODM artifacts
     1. Login to Decision Center Business console
