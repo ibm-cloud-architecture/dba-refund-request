@@ -13,7 +13,7 @@ Some of the following steps appear to require the CLI and cannot easily be done 
 1. Navigate to Workloads -> Secrets and locate the secret with the name equal to your cluster hostname (such as `dteroks-0600004t7y-ycnqs-4b4a324f027aea19c5cbc0c3275c4656-0000.us-south.containers.appdomain.cloud` or `ibmcloud-roks-83eow-4b4a324f027aea19c5cbc0c3275c4656-0000`)
 1. Extract/copy tls.key and save to a new file using a text editor without any special formatting (be careful not to type any other character in the file)
 1. Repeat for tls.crt in a second new file
-1. Access the CLI at the upper right of the web console by clicking IBM#<email> -> Copy Login Command
+1. Access the CLI at the upper right of the web console by clicking IAM#<email> -> Copy Login Command
 1. Click **Display token** and copy the line under **Log in with this token**
 1. Paste it into a MacOS or Linux capable terminal where the CLI is installed and execute
 1. Run the following command: `oc project dtecp4ba` (or the name of your own project/namespace)
