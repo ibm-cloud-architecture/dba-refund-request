@@ -40,7 +40,7 @@ We assume the following products are installed, up and running:
 1. Determine your credentials
     1. If using Cloud Pak for Business Automation as a Service:
         * You will use a single login to access BAS, BAW, ODM and BPC
-        * For ODM, you will need to create a service credential/account for basic auth credentials to invoke the API to Rule Execution Server
+        * For BAW and ODM, you will need to create a service credential/account under Access Management to connect in the external automation service and invoke the API to Rule Execution Server, make sure to give the service credential an ODM role the allows execution in the environment that will run the ODM rules
     1. If deploying Refund Request on your own OpenShift environment:
         * Make sure you have a login to all required components above
     1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS):
@@ -60,9 +60,13 @@ We assume the following products are installed, up and running:
     1. Import `Refund_Request - YYYY.MM.DD_XX.twx`
     1. Open the Refund Request process app / project and navigate to Process App Settings -> Servers
     1. Edit the settings for hostname, port, authentication and so forth for your ODM server
-    1. Open the BAI Generators team and add an appropriate user to the team
+        1. If using Cloud Pak for Business Automation as a Service: the hostname follows the pattern `odm-dev-<tenant_hostname>` with no `https://` at the beginning and the port is left blank
+        1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS): the hostname should be the ODM Decision Server Console route hostname with no `https://` at the beginning and the port is left blank
+    1. Open the BAI Generators team and add an appropriate user to the team, generally your BAW user
     1. Create a new snapshot of the process application / project
-    1. If using Cloud Pak for Business Automation as a Service or more than one Workflow environment is present (such as Workflow Authoring and Workflow Server), install the new snapshot to the Workflow Server connected to the required BAI emitters.  For Cloud Pak for Business Automation as a Service, this is Production by default.
+    1. If using Cloud Pak for Business Automation as a Service or more than one Workflow environment is present (such as Workflow Authoring and Workflow Server), install the new snapshot to the Workflow Server connected to the required BAI emitters
+        1. If using Cloud Pak for Business Automation as a Service: this is Production by default
+        1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS): there is only one Workflow environment and no need to deploy
 1. Setup BAI data
     1. Login to Process Portal (Workplace is not supported for this step) with the user specified in the above BAI Generators team
     1. Click to start Generate Week 1 BAI Data RR v2 and wait for the spinner to complete in about 20 seconds
@@ -74,20 +78,22 @@ We assume the following products are installed, up and running:
     1. Fix any charts that do not have data; the most likely error requires a selection of `decimal (data > TG2 > pTime) – (float)` in the Data item field after the monitoring source is changed
 1. Deploy Business Automation Studio artifacts
     1. If using Cloud Pak for Business Automation as a Service
-        1. Create an external automation service named `Refund_Request_Application_Services`, connect it to the appropriate BAW server, select the Refund Request process and Invoke Refund Processing ODM service flow and publish
+        1. Create an external automation service with a new connection to the BAW Server in Production (URL pattern `https://<tenant_hostname>/dba/run`) and use the service credential, select the `Refund Request` process and `Invoke Refund Processing ODM` service flow, name the automation service `Refund_Request_Application_Services` (**Important**, this must be exact), and publish
         1. Export the external automation service as a ZIP from the Business automations -> Extenal section
     1. If deploying Refund Request on your own OpenShift environment:
-        1. Publish the workflow project's snapshot in Business Automation Studio to make the automation services available to applications
+        1. Publish the workflow project's snapshot in Business Automation Studio -> Business automations -> Workflow -> Refund Request -> Versions to make the automation services available to applications
     1. Import the Refund Request application in Business applications using `RefundRequest (RR) – App - YYYY.MM.DD_XX_PLATFORM.twx` (where platform is `saas-<version>` for Cloud Pak for Business Automation as a Service or `ocp-demo-<version>` for deploying Refund Request on your own OpenShift demo pattern environment)
     1. No edit of the application should be required but if an edit is done, create a new snapshot
-    1. Export the application as a ZIP
+    1. Export the application from Business Automation Studio -> Business applications -> Refund Request -> Versions as a ZIP
 1. Deploy Business Automation Navigator artifacts
     1. Login to Business Automation Navigator's admin desktop
-    1. Open and connect to the Application Engine Connection, sometimes called `APPENGO`
-    1. If using Cloud Pak for Business Automation as a Service: import both the automation service and application ZIP files
-    1. If deploying Refund Request on your own OpenShift environment: import only the application ZIP file
-    1. Edit the details of the application and add appropriate teams to the Permissions table
-    1. Edit the desktop of your choice and on the Layout tab, add the application
+        1. If using Cloud Pak for Business Automation as a Service: Production -> Manage solutions -> Publish
+        1. If deploying Refund Request on your own OpenShift environment: use your Navigator URL with `?desktop=appDesktop1` added to the end and use the menu to go to Administration
+    1. Select Connections on the left, edit the Application Engine Connection (generally called `APPENGO`) and connect
+        1. If using Cloud Pak for Business Automation as a Service: import both the automation service and application ZIP files
+        1. If deploying Refund Request on your own OpenShift environment: import only the application ZIP file
+    1. Edit Details from the application's menu and add appropriate teams to the Permissions table, such as `#AUTHENTICATED-USERS` to make the app available to everyone
+    1. Edit the desktop of your choice (generally `appDesktop1`) and on the Layout tab, select the application
 
 ### Refund Request application modes
 
