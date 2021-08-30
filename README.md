@@ -48,9 +48,9 @@ We assume the following products are installed, up and running:
         * Follow the steps on [Setup ROKS Ingress](setupROKSIngress.md) to ensure ODM can be invoked from workflows
 1. Deploy ODM artifacts
     1. Login to Decision Center Business console
-    1. On Library, click the import icon
+    1. On Library, click the import icon (Note: if you are upgrading an environment that has an earlier version of Refund Request installed, you can go into the existing decision service and import the below ZIP files within each branch, selecting to replace existing when prompted)
     1. Choose and upload `Refund Processing [main] YYYY.MM.DD_XX_PLATFORM.zip` (where platform is `saas-<version>` for Cloud Pak for Business Automation as a Service or `ocp-demo-<version>` for deploying Refund Request on your own OpenShift demo pattern environment)
-    1. Open the main branch, click Deployments and deploy to your Rule Execution Server (adjust the server within the deployment configuration as required)
+    1. Open the main branch, click Deployments, adjust the server within the deployment configuration if required (or you receive an error) and deploy to your Rule Execution Server (Note: if you are upgrading an environment that has an earlier version of Refund Request installed, you should first delete the ruleapp deployed to RES, as the application is set to use V1.0 and V1.1)
     1. Return to the branch list and click the plus sign to create a new branch based on main named Reduce Manual Processing
     1. Import `Refund Processing [Reduce Manual Processing] YYYY.MM.DD_XX_PLATFORM.zip` to the new branch and choose to replace the existing elements
     1. Deploy the new branch to Rule Execution Server as a second version
@@ -64,9 +64,10 @@ We assume the following products are installed, up and running:
         1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS): the hostname should be the ODM Decision Server Console route hostname with no `https://` at the beginning and the port is left blank
     1. Open the BAI Generators team and add an appropriate user to the team, generally your BAW user
     1. Create a new snapshot of the process application / project
-    1. If using Cloud Pak for Business Automation as a Service or more than one Workflow environment is present (such as Workflow Authoring and Workflow Server), install the new snapshot to the Workflow Server connected to the required BAI emitters
+    1. If more than one Workflow environment is present (such as Cloud Pak for Business Automation as a Service with Development and Production or a custom OpenShift deployment with Workflow Authoring and Workflow Server), install the new snapshot to the Workflow Server connected to the required BAI emitters
         1. If using Cloud Pak for Business Automation as a Service: this is Production by default
         1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS): there is only one Workflow environment and no need to deploy
+        1. If you are upgrading a Workflow environment that has an earlier version of Refund Request installed, go to the Process Admin Console -> Installed Apps and make the new snapshot just deployed the default version, optionally deactivating any old snapshots
 1. Setup BAI data
     1. Login to Process Portal (Workplace is not supported for this step) with the user specified in the above BAI Generators team
     1. Click to start Generate Week 1 BAI Data RR v2 and wait for the spinner to complete in about 20 seconds
@@ -78,7 +79,10 @@ We assume the following products are installed, up and running:
     1. Fix any charts that do not have data; the most likely error requires a selection of `decimal (data > TG2 > pTime) – (float)` in the Data item field after the monitoring source is changed
 1. Deploy Business Automation Studio artifacts
     1. If using Cloud Pak for Business Automation as a Service
-        1. Create an external automation service with a new connection to the BAW Server in Production (URL pattern `https://<tenant_hostname>/dba/run`) and use the service credential, select the `Refund Request` process and `Invoke Refund Processing ODM` service flow, name the automation service `Refund_Request_Application_Services` (**Important**, this must be exact), and publish
+        1. Create an external automation service at Development -> Build -> Business Automation Studio -> Business automations -> Create -> External
+        1. Create a connection to the Workflow Server in Production (URL pattern `https://<tenant_hostname>/dba/run`) and use a service credential
+        1. Select the `Refund Request` process and `Invoke Refund Processing ODM` service flow
+        1. Name the automation service `Refund_Request_Application_Services` (**Important**, this must be exact) and publish
         1. Export the external automation service as a ZIP from the Business automations -> Extenal section
     1. If deploying Refund Request on your own OpenShift environment:
         1. Publish the workflow project's snapshot in Business Automation Studio -> Business automations -> Workflow -> Refund Request -> Versions to make the automation services available to applications
