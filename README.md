@@ -74,6 +74,7 @@ We assume the following products are installed, up and running:
     1. Do the same for Generate Week 2 BAI Data RR v2
 1. Deploy BPC artifacts
     1. Login to Business Performance Center
+    1. If you are upgrading a Workflow environment that has an earlier version of Refund Request installed, you should delete the existing dashboards or ask the original owner to delete them
     1. Import two dashboards using `RefundRequest (RR) – Week 1 - YYYY.MM.DD_XX.json` and `RefundRequest (RR) – Week 2 - YYYY.MM.DD_XX.json`
     1. Adjust the monitoring sources to the deployed BAW snapshot for the dashboard and any charts that require it
     1. Fix any charts that do not have data; the most likely error requires a selection of `decimal (data > TG2 > pTime) – (float)` in the Data item field after the monitoring source is changed
