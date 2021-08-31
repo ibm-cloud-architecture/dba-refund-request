@@ -77,6 +77,7 @@ We assume the following products are installed, up and running:
     1. Import two dashboards using `RefundRequest (RR) – Week 1 - YYYY.MM.DD_XX.json` and `RefundRequest (RR) – Week 2 - YYYY.MM.DD_XX.json`
     1. Adjust the monitoring sources to the deployed BAW snapshot for the dashboard and any charts that require it
     1. Fix any charts that do not have data; the most likely error requires a selection of `decimal (data > TG2 > pTime) – (float)` in the Data item field after the monitoring source is changed
+    1. If using Cloud Pak for Business Automation as a Service or another environment shared with multiple users: use the three dot menu next to each Refund Request dashboard and choose to **Share with everyone** so all other users can see the dashboard with read only access
 1. Deploy Business Automation Studio artifacts
     1. If using Cloud Pak for Business Automation as a Service
         1. Create an external automation service at Development -> Build -> Business Automation Studio -> Business automations -> Create -> External
