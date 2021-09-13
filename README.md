@@ -63,8 +63,8 @@ We assume the following products are installed, up and running:
     1. Import `Refund_Request - YYYY.MM.DD_XX.twx`
     1. Open the Refund Request process app / project and navigate to Process App Settings -> Servers
     1. Edit the settings for hostname, port, authentication and so forth for your ODM server
-        1. If using CP4BAaaS: the hostname follows the pattern `odm-dev-<tenant_hostname>` with no `https://` at the beginning and the port is left blank
-        1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS): the hostname should be the ODM Decision Server Console route hostname with no `https://` at the beginning and the port is left blank
+        1. If using CP4BAaaS: the hostname is based on the Rule Execution Server URL and follows the pattern `odm-<environment>-<tenant_hostname>` with no `https://` at the beginning and the port field left blank
+        1. If deploying Refund Request on your own OpenShift environment based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS): the hostname should be the ODM Decision Server Console route hostname with no `https://` at the beginning and the port left blank
     1. Open the BAI Generators team and add an appropriate user to the team, generally your BAW user
     1. Create a new snapshot of the process application / project
     1. If more than one Workflow environment is present (such as CP4BAaaS with Development and Production or a custom OpenShift deployment with Workflow Authoring and Workflow Server), install the new snapshot to the Workflow Server connected to the required BAI emitters
