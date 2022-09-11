@@ -1,0 +1,215 @@
+{
+  "id" : "Vm_8sX4BJurkZLm00xDi",
+  "name" : "Refund Request (RR) - Week 1",
+  "description" : "Focus Corp Refund Dashboard - Week 1",
+  "owner" : "jgoodhue@us.ibm.com",
+  "type" : "EVERYONE",
+  "visualizations" : [ {
+    "id" : "771fcf81-4645-4538-a3cd-45f3e0e8e679",
+    "name" : "Number of Refund Requests per Week",
+    "description" : "",
+    "config" : {
+      "type" : "MetricConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "c71bf4a2-c09b-4f47-bf9d-063a370077c0 - 2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651",
+        "name" : "Generate Week 1 BAI Data RR v2 - 2022.08.17_01",
+        "fields" : [ "processId", "processVersionId" ],
+        "fieldValues" : [ "c71bf4a2-c09b-4f47-bf9d-063a370077c0", "2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651" ],
+        "timestampField" : "timestamp",
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "aggregations" : [ {
+          "field" : "",
+          "kind" : "Count"
+        } ],
+        "groups" : [ ],
+        "drill" : false,
+        "_version" : 2
+      },
+      "settings" : {
+        "type" : "SingleSettingsTextDto",
+        "unit" : "requests",
+        "_version" : 1
+      },
+      "_version" : 1
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 0.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 0.0,
+      "y" : 0.0,
+      "w" : 6.0,
+      "h" : 1.0
+    } ]
+  }, {
+    "id" : "8c486142-d95f-4c5e-97eb-d5b1dabec3ae",
+    "name" : "Refund Request by Type",
+    "description" : "",
+    "config" : {
+      "type" : "MetricConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "c71bf4a2-c09b-4f47-bf9d-063a370077c0 - 2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651",
+        "name" : "Generate Week 1 BAI Data RR v2 - 2022.08.17_01",
+        "fields" : [ "processId", "processVersionId" ],
+        "fieldValues" : [ "c71bf4a2-c09b-4f47-bf9d-063a370077c0", "2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651" ],
+        "timestampField" : "timestamp",
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "aggregations" : [ {
+          "field" : "",
+          "kind" : "Count"
+        } ],
+        "groups" : [ {
+          "field" : "data.TG2.status.string.keyword"
+        } ],
+        "drill" : false,
+        "_version" : 2
+      },
+      "settings" : {
+        "type" : "SingleSettingsPieDto",
+        "unit" : "requests",
+        "_version" : 1
+      },
+      "_version" : 1
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 4.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 0.0,
+      "y" : 1.0,
+      "w" : 2.0,
+      "h" : 4.0
+    } ]
+  }, {
+    "id" : "73720611-17e5-4ec0-b414-375b6758b06f",
+    "name" : "Average Manual Investigation Processing Time",
+    "description" : "",
+    "config" : {
+      "type" : "KpiConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "c71bf4a2-c09b-4f47-bf9d-063a370077c0 - 2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651",
+        "name" : "Generate Week 1 BAI Data RR v2 - 2022.08.17_01",
+        "fields" : [ "processId", "processVersionId" ],
+        "fieldValues" : [ "c71bf4a2-c09b-4f47-bf9d-063a370077c0", "2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651" ],
+        "timestampField" : "timestamp",
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "aggregations" : [ {
+          "field" : "data.TG2.pTime.decimal",
+          "kind" : "Average"
+        } ],
+        "groups" : [ ],
+        "drill" : false,
+        "_version" : 2
+      },
+      "settings" : {
+        "type" : "SingleSettingsRadialGaugeDto",
+        "min" : 0.0,
+        "max" : 200.0,
+        "unit" : "minutes",
+        "_version" : 1
+      },
+      "thresholds" : [ {
+        "name" : "High",
+        "value" : 100.0,
+        "ranges" : [ {
+          "name" : "Good",
+          "start" : "min",
+          "end" : "100",
+          "color" : "#005d5d"
+        }, {
+          "name" : "High",
+          "start" : "100",
+          "end" : "max",
+          "color" : "#9f1853"
+        } ]
+      } ]
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 2.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 2.0,
+      "y" : 1.0,
+      "w" : 2.0,
+      "h" : 4.0
+    } ],
+    "showAsTable" : false
+  }, {
+    "id" : "59c858e2-4f96-4a32-b17b-0376b92fe54f",
+    "name" : "Average Manual Processing Time per Day",
+    "description" : "",
+    "config" : {
+      "type" : "MetricConfigDto",
+      "domain" : {
+        "kind" : "Workflow (BPMN)",
+        "id" : "c71bf4a2-c09b-4f47-bf9d-063a370077c0 - 2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651",
+        "name" : "Generate Week 1 BAI Data RR v2 - 2022.08.17_01",
+        "fields" : [ "processId", "processVersionId" ],
+        "fieldValues" : [ "c71bf4a2-c09b-4f47-bf9d-063a370077c0", "2064.21a1c6a0-f7ae-46cc-a9f9-011f2e03f651" ],
+        "timestampField" : "timestamp",
+        "hasSuggestions" : false
+      },
+      "fieldAggregation" : {
+        "aggregations" : [ {
+          "field" : "data.TG2.pTime.decimal",
+          "kind" : "Average"
+        } ],
+        "groups" : [ {
+          "field" : "data.TG2.dayOfWeekS.string.keyword"
+        } ],
+        "drill" : false,
+        "_version" : 2
+      },
+      "settings" : {
+        "type" : "SingleSettingsBarDto",
+        "labelYAxis" : "",
+        "unit" : "day of week (minutes)",
+        "_version" : 1
+      },
+      "_version" : 1
+    },
+    "layouts" : [ {
+      "kind" : "SM",
+      "x" : 0.0,
+      "y" : 6.0,
+      "w" : 1.0,
+      "h" : 2.0
+    }, {
+      "kind" : "LG",
+      "x" : 4.0,
+      "y" : 1.0,
+      "w" : 2.0,
+      "h" : 4.0
+    } ],
+    "showAsTable" : false
+  } ],
+  "timeWindow" : {
+    "type" : "NoTimeWindowDto"
+  },
+  "creation" : "2022-01-31T21:14:03.582Z",
+  "lastUpdate" : "2022-08-18T02:19:27.538325842Z",
+  "goalsLayout" : [ ],
+  "monitoringSources" : [ ],
+  "_dashboardVersion" : 2
+}

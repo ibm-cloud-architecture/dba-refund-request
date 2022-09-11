@@ -1,3 +1,5 @@
+# NO LONGER NEEDED WITH V22.0.1
+
 ## Setup ROKS Ingress for Refund Request use case
 
 By default, OpenShift environments based on the demo pattern and running on IBM Red Hat OpenShift on IBM Cloud (ROKS) will not have any trusted ingress or certificates for Cloud Pak for Business Automation (CP4BA) routes and services.  This means that workflows (such as those running in Workflow Authoring in Business Automation Studio) will not be able to successfully connect to ODM services.
